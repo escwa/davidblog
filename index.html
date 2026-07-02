@@ -45,7 +45,7 @@
         <div class="gallery">
           <article class="project project--wide">
             <div class="project__media">
-              <img src="images/947A7573.jpg" alt="Photos taken at the INTI event">
+              <div class="project__image" role="img" aria-label="Photos taken at the INTI event" data-src="images/947A7573.jpg"></div>
               <div class="project__overlay">
                 <p>Photos taken at the INTI event</p>
               </div>
@@ -58,7 +58,7 @@
           
           <article class="project project--portrait">
             <div class="project__media">
-              <img src="images/947A7519.jpg" alt="INTI event leaders taking photos">
+              <div class="project__image" role="img" aria-label="INTI event leaders taking photos" data-src="images/947A7519.jpg"></div>
               <div class="project__overlay">
                 <p>INTI event leaders taking photos</p>
               </div>
@@ -71,7 +71,7 @@
           
           <article class="project project--wide">
             <div class="project__media">
-              <img src="images/947A3057.jpg" alt="A moment captured at West Lake in Hangzhou">
+              <div class="project__image" role="img" aria-label="A moment captured at West Lake in Hangzhou" data-src="images/947a3057.jpg"></div>
               <div class="project__overlay">
                 <p>A moment captured at West Lake in Hangzhou</p>
               </div>
@@ -84,7 +84,7 @@
           
           <article class="project project--portrait">
             <div class="project__media">
-              <img src="images/947A4065.jpg" alt="Leisurely stroll and photography in Kuala Lumpur">
+              <div class="project__image" role="img" aria-label="Leisurely stroll and photography in Kuala Lumpur" data-src="images/947A4065.jpg"></div>
               <div class="project__overlay">
                 <p>Leisurely stroll and photography in Kuala Lumpur</p>
               </div>
@@ -97,7 +97,7 @@
           
           <article class="project project--wide">
             <div class="project__media">
-              <img src="images/947A5819.jpg" alt="Leisurely stroll and photography at Batu Caves, Malaysia">
+              <div class="project__image" role="img" aria-label="Leisurely stroll and photography at Batu Caves, Malaysia" data-src="images/947A5819.jpg"></div>
               <div class="project__overlay">
                 <p>Leisurely stroll and photography at Batu Caves, Malaysia</p>
               </div>
@@ -110,7 +110,7 @@
           
             <article class="project project--portrait">
             <div class="project__media">
-              <img src="images/947A5697.jpg" alt="Photo shoot memories of an event specially invited by INTI Media Club">
+              <div class="project__image" role="img" aria-label="Photo shoot memories of an event specially invited by INTI Media Club" data-src="images/947A5697.jpg"></div>
               <div class="project__overlay">
                 <p>Photo shoot memories of an event specially invited by INTI Media Club</p>
               </div>
@@ -124,10 +124,7 @@
       </section>
 
       <section class="section about" id="about">
-        <img
-          src="./images/6272eeae62de97b7450891db3eef116c.jpg"
-          alt="HU ZHUONENG"
-        />
+        <div class="about__portrait" role="img" aria-label="HU ZHUONENG"></div>
         <div class="about__copy">
           <p class="eyebrow">About</p>
           <h2>I am a photographer and &nbsp;<br>studying at INTI</h2>
@@ -139,7 +136,7 @@
           </p>
           <p>The website was designed using Photoshop for line art, then the website design was done using Figma, and finally, it was produced as HTML.Thank you for visiting!</p>
           <div class="about-extra-image">
-            <img class="inti-logo" src="images/inti logo.jpg" alt="INTI logo">
+            <div class="inti-logo" role="img" aria-label="INTI logo"></div>
           </div>
         </div>
       </section>
@@ -174,6 +171,20 @@
       </section>
 
       <section class="quote" aria-label="Photography quote">
+        <video
+          class="quote__video"
+          muted
+          autoplay
+          loop
+          playsinline
+          preload="metadata"
+          poster="images/L1023117.jpg"
+          controlslist="nodownload noplaybackrate noremoteplayback"
+          disablepictureinpicture
+          disableremoteplayback
+        >
+          <source src="images/L1023117.mp4" type="video/mp4" />
+        </video>
         <blockquote>“We don't need to worry about the future; we just need to capture the present moment with the shutter.”</blockquote>
       </section>
 
@@ -189,7 +200,7 @@
             <li><span aria-hidden="true">◎</span> @David_hzn</li>
           </ul>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" novalidate>
           <label>
             <span>Name</span>
             <input type="text" name="name" placeholder="Your full name" />
@@ -202,6 +213,7 @@
             <span>Message</span>
             <textarea name="message" placeholder="Whatever's on your mind."></textarea>
           </label>
+          <p class="form-status" aria-live="polite"></p>
           <button type="submit">Send message <span aria-hidden="true">↗</span></button>
         </form>
       </section>
@@ -217,5 +229,25 @@
         <a href="#contact">Contact</a>
       </nav>
     </footer>
+
+    <div class="work-modal" aria-hidden="true">
+      <div class="work-modal__backdrop" data-modal-close></div>
+      <article class="work-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="work-modal__close" type="button" aria-label="Close image preview" data-modal-close>×</button>
+        <div class="work-modal__image-wrap">
+          <button class="work-modal__nav work-modal__nav--prev" type="button" aria-label="Previous image">‹</button>
+          <div class="work-modal__image" role="img" aria-label=""></div>
+          <button class="work-modal__nav work-modal__nav--next" type="button" aria-label="Next image">›</button>
+        </div>
+        <div class="work-modal__content">
+          <p class="work-modal__eyebrow">Selected Work</p>
+          <h2 id="modal-title"></h2>
+          <p class="work-modal__year"></p>
+          <p class="work-modal__description"></p>
+        </div>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
